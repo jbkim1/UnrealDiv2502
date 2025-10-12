@@ -18,6 +18,10 @@ class DIV1SAMPLE_API AMyTree : public AActor
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	UBoxComponent* BoxComponent;
+
+private :
+	UPROPERTY(EditDefaultsOnly, Category = "Spawn")
+	TSubclassOf<AActor> SpawnObject;
 	
 public:	
 	// Sets default values for this actor's properties
@@ -31,7 +35,7 @@ protected:
 	void OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void OnCharacter();
+	void OnPostSpawnTreeObject();
 
 public:	
 	// Called every frame

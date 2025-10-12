@@ -33,5 +33,15 @@ void AMyTree::Tick(float DeltaTime)
 
 void AMyTree::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	this->OnCharacter();
+	if (this->SpawnObject)
+	{
+		FVector SpawnLocation = this->GetActorLocation() + FVector(
+			FMath::RandRange(-100.0f, 100.0f), FMath::RandRange(-100.0f, 100.0f), 200.0f
+		);
+		FRotator SpawnRotation = FRotator::ZeroRotator;
+		FActorSpawnParameters SpawnParams;
+		GetWorld()->SpawnActor<AActor>(this->SpawnObject, SpawnLocation, SpawnRotation, SpawnParams);
+
+		this->OnPostSpawnTreeObject();
+	}
 }
