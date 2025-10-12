@@ -1,3 +1,9 @@
 # 언리얼 1분반 C++ 실습자료
 
 release에서 해당 주차의 실습자료를 다운로드 받아 사용하기 바랍니다.
+
+## 자료 구성
+
+### ✅ 5-2. begin overlap
+
+### ✅ 7-1. spawn + actor referencing
