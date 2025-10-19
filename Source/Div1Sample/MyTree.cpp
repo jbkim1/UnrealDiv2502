@@ -3,6 +3,8 @@
 
 #include "MyTree.h"
 
+#include "MyCustomObj.h"
+
 // Sets default values
 AMyTree::AMyTree()
 {
@@ -22,6 +24,10 @@ void AMyTree::BeginPlay()
 	Super::BeginPlay();
 
 	this->BoxComponent->OnComponentBeginOverlap.AddDynamic(this, &AMyTree::OnBeginOverlap);
+
+	// MyCustomObj »ý¼º
+	this->MyObj = NewObject<UMyCustomObj>(this);
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("MyObj MyValue: %d"), this->MyObj->MyValue));
 }
 
 // Called every frame
@@ -33,6 +39,8 @@ void AMyTree::Tick(float DeltaTime)
 
 void AMyTree::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("MyObj MyValue: %d"), this->MyObj->MyValue));
+
 	if (this->SpawnObject)
 	{
 		FVector SpawnLocation = this->GetActorLocation() + FVector(

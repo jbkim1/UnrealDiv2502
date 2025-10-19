@@ -22,6 +22,9 @@ class DIV1SAMPLE_API AMyTree : public AActor
 private :
 	UPROPERTY(EditDefaultsOnly, Category = "Spawn")
 	TSubclassOf<AActor> SpawnObject;
+
+	UPROPERTY()
+	class UMyCustomObj* MyObj;
 	
 public:	
 	// Sets default values for this actor's properties
