@@ -10,4 +10,8 @@ release에서 해당 주차의 실습자료를 다운로드 받아 사용하기 
 
 ### ✅ 8-1. UObject
 
-- 종료 후 발생하는 오류는 소멸자에서 GEngine 사용했기 때문.
+* 종료 후 발생하는 오류는 소멸자에서 GEngine 사용했기 때문.
+
+### ✅ 10-1. Unreal Smart Pointer
+
+* TSharedPtr, TWeakPtr

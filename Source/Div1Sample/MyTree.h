@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/BoxComponent.h"
+#include "NativeCppClass.h"
 #include "MyTree.generated.h"
 
 UCLASS()
@@ -25,6 +26,8 @@ private :
 
 	UPROPERTY()
 	class UMyCustomObj* MyObj;
+
+	TSharedPtr<NativeCppClass> NativeCppObj;
 	
 public:	
 	// Sets default values for this actor's properties

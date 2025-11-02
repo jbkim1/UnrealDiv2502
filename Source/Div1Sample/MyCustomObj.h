@@ -19,5 +19,11 @@ public :
 	~UMyCustomObj();
 
 public :
-	int32 MyValue;	
+	int32 MyValue;
+
+public :
+	void setNativeCppObj(TWeakPtr<class NativeCppClass> InNativeCppObj);
+
+private :
+	TWeakPtr<class NativeCppClass> NativeCppObj;
 };

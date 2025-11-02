@@ -16,6 +16,9 @@ AMyTree::AMyTree()
 
 	this->TreeMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("TreeMesh"));
 	this->TreeMesh->SetupAttachment(RootComponent);
+
+	// NativeCppClass 持失(shared pointer)
+	this->NativeCppObj = MakeShared<NativeCppClass>();
 }
 
 // Called when the game starts or when spawned
@@ -28,6 +31,8 @@ void AMyTree::BeginPlay()
 	// MyCustomObj 持失
 	this->MyObj = NewObject<UMyCustomObj>(this);
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("MyObj MyValue: %d"), this->MyObj->MyValue));
+
+	this->MyObj->setNativeCppObj(this->NativeCppObj);
 }
 
 // Called every frame
