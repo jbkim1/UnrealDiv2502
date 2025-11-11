@@ -131,3 +131,8 @@ void ADiv1SampleCharacter::DoJumpEnd()
 	// signal the character to stop jumping
 	StopJumping();
 }
+
+void ADiv1SampleCharacter::heal()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Healed!"));
+}

@@ -85,6 +85,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Input")
 	virtual void DoJumpEnd();
 
+	UFUNCTION(BlueprintCallable, Category = "Sample")
+	void heal();
+
 public:
 
 	/** Returns CameraBoom subobject **/
