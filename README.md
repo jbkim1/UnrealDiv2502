@@ -15,3 +15,8 @@ release에서 해당 주차의 실습자료를 다운로드 받아 사용하기 
 ### ✅ 10-1. Unreal Smart Pointer
 
 * TSharedPtr, TWeakPtr
+
+### ✅ 6-1, 6-2. 11-1. 풀이
+
+### ✅ 12-2. 12-1 풀이
+
